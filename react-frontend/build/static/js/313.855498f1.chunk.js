@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkreact_frontend=self.webpackChunkreact_frontend||[]).push([[313],{8313:(e,t,i)=>{i.r(t),i.d(t,{default:()=>c});i(5043);var a=i(9356),r=i(579);const c=()=>(0,r.jsx)(a.A,{config:{testName:"Typing Certificate Test",timeLimit:600,passageCategory:"Certificate Test",qualificationCriteria:{minWpm:20,minAccuracy:75}},hideDurationSelector:!0})}}]);
+//# sourceMappingURL=313.855498f1.chunk.js.map
