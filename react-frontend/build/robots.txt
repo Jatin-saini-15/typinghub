@@ -1,0 +1,57 @@
+# https://www.robotstxt.org/robotstxt.html
+User-agent: *
+Allow: /
+
+# Allow all major search engines
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: Baiduspider
+Allow: /
+
+User-agent: YandexBot
+Allow: /
+
+# Disallow admin and private areas
+Disallow: /admin/
+Disallow: /api/
+Disallow: /backend/
+Disallow: /private/
+Disallow: /temp/
+Disallow: /uploads/
+Disallow: /node_modules/
+
+# Disallow user-specific content
+Disallow: /user/
+Disallow: /dashboard/
+Disallow: /profile/
+Disallow: /settings/
+
+# Allow important pages
+Allow: /typing-test
+Allow: /exam-wise-test
+Allow: /create-test
+Allow: /typing-course
+Allow: /certificate
+Allow: /about-us
+Allow: /contact-us
+Allow: /faq
+Allow: /blog
+Allow: /privacy-policy
+Allow: /terms-of-service
+
+# Sitemap location
+Sitemap: https://typinghub.in/sitemap.xml
+Sitemap: https://www.typinghub.in/sitemap.xml
+
+# Crawl delay (optional)
+Crawl-delay: 1 
