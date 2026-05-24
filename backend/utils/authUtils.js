@@ -1,0 +1,161 @@
+const jwt = require('jsonwebtoken');
+const bcrypt = require('bcryptjs');
+const nodemailer = require('nodemailer');
+const crypto = require('crypto');
+const config = require('../config');
+
+// Token management
+const generateTokens = (id, role, tokenVersion = 0) => {
+  const accessToken = jwt.sign(
+    { id, role, tokenVersion },
+    config.ACCESS_TOKEN_SECRET,
+    { expiresIn: '15m' }
+  );
+
+  const refreshToken = jwt.sign(
+    { id, role, tokenVersion },
+    config.REFRESH_TOKEN_SECRET,
+    { expiresIn: '7d' }
+  );
+
+  return { accessToken, refreshToken };
+};
+
+// Password management
+const hashPassword = async (password) => {
+  const salt = await bcrypt.genSalt(10);
+  return bcrypt.hash(password.toString(), salt);
+};
+
+const comparePassword = async (password, hashedPassword) => {
+  return bcrypt.compare(password, hashedPassword);
+};
+
+const validatePasswordStrength = (password) => {
+  if (typeof password !== 'string') {
+    return {
+      valid: false,
+      message: 'Password is required',
+    };
+  }
+
+  if (password.length < 8) {
+    return {
+      valid: false,
+      message: 'Password must be at least 8 characters long',
+    };
+  }
+
+  if (!/[A-Z]/.test(password) || !/[a-z]/.test(password) || !/[0-9]/.test(password)) {
+    return {
+      valid: false,
+      message: 'Password must include uppercase, lowercase, and a number',
+    };
+  }
+
+  return { valid: true };
+};
+
+// Email management
+if (!config.EMAIL_USER || !config.EMAIL_PASS) {
+  console.warn('WARNING: EMAIL_USER or EMAIL_PASS not set. Email features will not work.');
+}
+
+const transporter = nodemailer.createTransport({
+  service: 'gmail',
+  auth: {
+    user: config.EMAIL_USER,
+    pass: config.EMAIL_PASS
+  }
+});
+
+const sendResetEmail = async (email, resetToken, role) => {
+  const resetUrl = `${config.FRONTEND_URL}/${role}/reset-password/${resetToken}`;
+  
+  const mailOptions = {
+    from: `TypingHub <${config.EMAIL_USER || 'your-email@gmail.com'}>`,
+    to: email,
+    subject: 'Password Reset Request',
+    html: `
+      <h1>Password Reset Request</h1>
+      <p>You requested to reset your password. Click the link below to reset it:</p>
+      <a href="${resetUrl}">Reset Password</a>
+      <p>This link will expire in 1 hour.</p>
+      <p>If you didn't request this, please ignore this email.</p>
+    `
+  };
+
+  await transporter.sendMail(mailOptions);
+};
+
+// Token management
+const generateResetToken = () => {
+  return crypto.randomBytes(32).toString('hex');
+};
+
+// Cookie management
+const setCookies = (res, refreshToken) => {
+  res.cookie('refreshToken', refreshToken, {
+    httpOnly: true,
+    secure: config.NODE_ENV === 'production',
+    sameSite: 'strict',
+    maxAge: 7 * 24 * 60 * 60 * 1000, // 7 days
+  });
+};
+
+// Response formatters
+const formatAuthResponse = (user, accessToken, role) => {
+  return {
+    success: true,
+    accessToken,
+    user: {
+      id: user._id,
+      name: user.name,
+      email: user.email,
+      role
+    }
+  };
+};
+
+const formatErrorResponse = (message, statusCode = 400) => {
+  return {
+    success: false,
+    message,
+    statusCode
+  };
+};
+
+// OTP management
+const generateOTP = () => {
+  // Use cryptographically secure random integer
+  return crypto.randomInt(100000, 1000000).toString(); // 6-digit OTP
+};
+
+const sendOtpEmail = async (email, otp) => {
+  const mailOptions = {
+    from: `TypingHub <${config.EMAIL_USER || 'your-email@gmail.com'}>`,
+    to: email,
+    subject: 'Your OTP for Password Reset',
+    html: `
+      <h1>Password Reset OTP</h1>
+      <p>Your OTP for password reset is: <b>${otp}</b></p>
+      <p>This OTP will expire in 10 minutes.</p>
+      <p>If you didn't request this, please ignore this email.</p>
+    `
+  };
+  await transporter.sendMail(mailOptions);
+};
+
+module.exports = {
+  generateTokens,
+  hashPassword,
+  comparePassword,
+  validatePasswordStrength,
+  sendResetEmail,
+  generateResetToken,
+  setCookies,
+  formatAuthResponse,
+  formatErrorResponse,
+  generateOTP,
+  sendOtpEmail
+}; 
