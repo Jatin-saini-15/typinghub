@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="%PUBLIC_URL%/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="%PUBLIC_URL%/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="%PUBLIC_URL%/favicon-16x16.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#3b82f6" />
+    <meta
+      name="description"
+      content="TypingHub.in - Master typing skills for government exams. Practice with live tests, typing courses, and premium typing tools. Best platform for SSC CGL, CHSL, RRB NTPC typing preparation."
+    />
+    <meta name="keywords" content="typing test, typing practice, government exam typing, SSC CGL typing, SSC CHSL typing, RRB NTPC typing, typing speed, typing course, typing tools, keyboard, typing competition" />
+    
+    <!-- PWA Meta Tags -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="TypingHub.in" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="msapplication-TileColor" content="#3b82f6" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://typinghub.in/" />
+    <meta property="og:title" content="TypingHub.in - Master Typing for Government Exams" />
+    <meta property="og:description" content="Master typing skills for government exams. Practice with live tests, typing courses, and premium typing tools. Best platform for SSC CGL, CHSL, RRB NTPC typing preparation." />
+    <meta property="og:image" content="https://typinghub.in/images/Main_LOGO.webp" />
+    <meta property="og:site_name" content="TypingHub.in" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://typinghub.in/" />
+    <meta property="twitter:title" content="TypingHub.in - Master Typing for Government Exams" />
+    <meta property="twitter:description" content="Master typing skills for government exams. Practice with live tests, typing courses, and premium typing tools." />
+    <meta property="twitter:image" content="https://typinghub.in/images/Main_LOGO.webp" />
+    
+    <!-- Additional SEO -->
+    <meta name="author" content="TypingHub.in" />
+    <meta name="robots" content="index, follow" />
+    <meta name="language" content="English" />
+    <meta name="revisit-after" content="7 days" />
+    <meta name="distribution" content="global" />
+    <link rel="canonical" href="https://typinghub.in/" />
+    
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    
+    <!-- Critical CSS Inline - Optimized to prevent forced reflow -->
+    <style>
+      *{margin:0;padding:0;box-sizing:border-box;font-display:swap}html{scroll-behavior:smooth}body{margin:0;font-family:'Roboto Serif',-apple-system,BlinkMacSystemFont,'Segoe UI','Roboto','Oxygen','Ubuntu','Cantarell','Fira Sans','Droid Sans','Helvetica Neue',sans-serif;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;background:#f5f5f5;color:#1a2a44;line-height:1.6;min-height:100vh;display:flex;flex-direction:column;overflow-x:hidden;font-display:swap}#root{min-height:100vh;display:flex;flex-direction:column}.main-content{flex:1;padding:0;background:#fff;display:flex;flex-direction:column}.container{width:100%;max-width:1200px;margin:0 auto;padding:0 20px}nav{background:#fff;padding:15px 20px;display:flex;justify-content:space-between;align-items:center;box-shadow:0 4px 12px rgba(0,0,0,0.1);position:sticky;top:0;z-index:6000;width:100%}.loading-spinner{display:flex;justify-content:center;align-items:center;min-height:200px}.btn{display:inline-block;padding:10px 20px;background:#1976d2;color:white;text-decoration:none;border-radius:6px;border:none;cursor:pointer;font-size:16px;transition:background 0.3s ease}.btn:hover{background:#1565c0}input,textarea,select{font-family:inherit;font-size:16px;padding:10px;border:1px solid #ddd;border-radius:6px;width:100%}@media (max-width:768px){.container{padding:0 15px}nav{padding:10px 15px}}.main-logo{will-change:auto;transform:translateZ(0)}.youtube-video{will-change:auto;transform:translateZ(0)}body{font-display:swap;font-synthesis:none;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+    </style>
+    
+    <!-- Google Fonts - Optimized critical path -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" href="https://fonts.gstatic.com/s/robotoserif/v18/Q5BYiX1bJKdSgE3Lp3S5HtFvRy7vIVg.woff2" as="font" type="font/woff2" crossorigin>
+    <style>
+      @font-face {
+        font-family: 'Roboto Serif';
+        font-style: normal;
+        font-weight: 400;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/robotoserif/v18/Q5BYiX1bJKdSgE3Lp3S5HtFvRy7vIVg.woff2) format('woff2');
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+      }
+      @font-face {
+        font-family: 'Roboto Serif';
+        font-style: normal;
+        font-weight: 700;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/robotoserif/v18/Q5BYiX1bJKdSgE3Lp3S5HtFvRy7vIVg.woff2) format('woff2');
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+      }
+    </style>
+    
+    <!-- Font Awesome CSS removed to reduce unused CSS; icons are bundled via React components -->
+    
+    <!-- Google AdSense -->
+    <meta name="google-adsense-account" content="ca-pub-9840881106215536">
+
+    <meta name="adsense-google" content="ca-pub-9840881106215536">
+    <!-- AdSense deferred/consent-gated loader -->
+    <script>
+      (function() {
+        const ADS_CLIENT = 'ca-pub-9840881106215536';
+        const ADS_SRC = `https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${ADS_CLIENT}`;
+        const STATE = { consent: null, loaded: false, timer: null, interacted: false };
+
+        function loadAdSenseScript() {
+          if (STATE.loaded) return;
+          STATE.loaded = true;
+          const s = document.createElement('script');
+          s.async = true;
+          s.src = ADS_SRC;
+          s.crossOrigin = 'anonymous';
+          document.head.appendChild(s);
+        }
+
+        function maybeLoad() {
+          // Load if consent granted, or after interaction, or after timeout fallback
+          if (STATE.consent === true || STATE.interacted) {
+            loadAdSenseScript();
+            cleanup();
+          }
+        }
+
+        function cleanup() {
+          ['click','scroll','keydown','pointerdown'].forEach(evt => {
+            window.removeEventListener(evt, onFirstInteraction, { passive: true });
+          });
+          if (STATE.timer) clearTimeout(STATE.timer);
+        }
+
+        function onFirstInteraction() {
+          STATE.interacted = true;
+          maybeLoad();
+        }
+
+        // Simple consent dialog (non-blocking); customize/integrate with your CMP if needed
+        function showConsent() {
+          try {
+            const bar = document.createElement('div');
+            bar.style.cssText = 'position:fixed;bottom:0;left:0;right:0;background:#111;color:#fff;padding:10px 14px;display:flex;gap:10px;align-items:center;justify-content:center;z-index:99999;font-size:14px;box-shadow:0 -2px 8px rgba(0,0,0,0.2)';
+            bar.innerHTML = '<span>This site uses ads (Google AdSense). Allow loading ad scripts?</span>';
+            const allowBtn = document.createElement('button');
+            allowBtn.textContent = 'Allow';
+            allowBtn.style.cssText = 'background:#4caf50;color:#fff;border:none;border-radius:6px;padding:6px 10px;cursor:pointer';
+            const denyBtn = document.createElement('button');
+            denyBtn.textContent = 'Deny';
+            denyBtn.style.cssText = 'background:#e53935;color:#fff;border:none;border-radius:6px;padding:6px 10px;cursor:pointer';
+            allowBtn.addEventListener('click', () => {
+              STATE.consent = true;
+              bar.remove();
+              maybeLoad();
+            });
+            denyBtn.addEventListener('click', () => {
+              STATE.consent = false; // keep ads disabled
+              bar.remove();
+              cleanup();
+            });
+            bar.appendChild(allowBtn);
+            bar.appendChild(denyBtn);
+            document.body.appendChild(bar);
+          } catch (e) {
+            // If UI fails, fallback to non-interaction based deferral
+          }
+        }
+
+        // Auto-load ads on first interaction or after 3s timeout
+        ['click','scroll','keydown','pointerdown'].forEach(evt => {
+          window.addEventListener(evt, onFirstInteraction, { passive: true, once: true });
+        });
+        STATE.timer = setTimeout(() => {
+          STATE.interacted = true;
+          maybeLoad();
+        }, 3000);
+
+        // Auto-load ads without consent banner (removed showConsent call)
+        // window.addEventListener('load', () => setTimeout(showConsent, 500));
+      })();
+    </script>
+    
+    <title>TypingHub.in - Master Typing for Government Exams | Live Tests & Courses</title>
+    
+    <!-- Structured Data for Organization -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "TypingHub.in",
+      "url": "https://typinghub.in",
+      "logo": "https://typinghub.in/images/Main_LOGO.webp",
+      "description": "Master typing skills for government exams. Practice with live tests, typing courses, and premium typing tools.",
+      "sameAs": [
+        "https://www.instagram.com/typinghub.in/"
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "email": "Contact@typinghub.in",
+        "contactType": "customer service"
+      }
+    }
+    </script>
+    
+    <!-- Structured Data for WebSite -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "TypingHub.in",
+      "url": "https://typinghub.in",
+      "description": "Master typing skills for government exams. Practice with live tests, typing courses, and premium typing tools.",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://typinghub.in/search?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+    </script>
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
+    
+    <!-- Critical JavaScript - Inline for immediate execution -->
+    <script>
+      // Add error handling for React
+      window.addEventListener('error', function(e) {
+        console.error('Global error:', e.error);
+      });
+      
+      // Preload critical resources
+      function preloadCriticalResources() {
+        const criticalImages = [
+          '%PUBLIC_URL%/images/Main_LOGO.webp',
+          '%PUBLIC_URL%/images/Background-img.webp'
+        ];
+        
+        criticalImages.forEach(src => {
+          const link = document.createElement('link');
+          link.rel = 'preload';
+          link.as = 'image';
+          link.href = src;
+          document.head.appendChild(link);
+        });
+      }
+      
+      // Execute preloading
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', preloadCriticalResources);
+      } else {
+        preloadCriticalResources();
+      }
+      
+      // Register service worker
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', function() {
+          navigator.serviceWorker.register('/sw.js')
+            .then(function(registration) {
+              console.log('SW registered: ', registration);
+            })
+            .catch(function(registrationError) {
+              console.log('SW registration failed: ', registrationError);
+            });
+        });
+      }
+    </script>
+    
+    <!-- Google Analytics - Deferred until user interaction/consent -->
+    <script>
+      (function() {
+        const GA_ID = 'G-815F7YF0FN';
+        let loaded = false;
+        function loadGA() {
+          if (loaded) return; loaded = true;
+          const s = document.createElement('script');
+          s.async = true; s.src = `https://www.googletagmanager.com/gtag/js?id=${GA_ID}`;
+          document.head.appendChild(s);
+      window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);} window.gtag = gtag;
+      gtag('js', new Date());
+          gtag('config', GA_ID, { page_title: document.title, page_location: window.location.href, send_page_view: true });
+          gtag('event', 'page_view', { page_title: document.title, page_location: window.location.href, custom_parameter: 'typinghub' });
+        }
+        function onInteract() { loadGA(); cleanup(); }
+        function cleanup() {
+          ['click','scroll','keydown','pointerdown'].forEach(evt => window.removeEventListener(evt, onInteract, { passive: true }));
+        }
+        ['click','scroll','keydown','pointerdown'].forEach(evt => window.addEventListener(evt, onInteract, { passive: true, once: true }));
+        // Optional: uncomment to load after 5s if no interaction
+        // setTimeout(loadGA, 5000);
+      })();
+    </script>
+  </body>
+</html> 
